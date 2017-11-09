@@ -16,6 +16,15 @@
     <!-- MetisMenu CSS -->
     <link href="<?php echo url(); ?>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+
+
+ <!-- DataTables CSS -->
+    <link href="<?php echo url(); ?>/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="<?php echo url(); ?>/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+ 
     <!-- Custom CSS -->
     <link href="<?php echo url(); ?>/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -24,4 +33,10 @@
 
     <!-- Custom Fonts -->
     <link href="<?php echo url(); ?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+   
+
+   
+
 

@@ -24,7 +24,7 @@ class UserspannelController extends Controller {
 
 		$users = User::All();
     		
-         return view("dashboard.users.usertypepannel")
+         return view("users.usertypepannel")
             ->with("users", $users);
 
            

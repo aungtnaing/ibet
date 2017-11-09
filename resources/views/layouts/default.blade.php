@@ -13,8 +13,8 @@
 		</div>
 
 	</div>
-	<script src="<?php echo url(); ?>/assets/js/excanvas.min.js"></script> 
 
+     
 
 	<script src="<?php echo url(); ?>/vendor/jquery/jquery.min.js"></script>
 
@@ -31,5 +31,21 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo url(); ?>/dist/js/sb-admin-2.js"></script>
+
+    
+
+    <!-- DataTables JavaScript -->
+    <script src="<?php echo url(); ?>/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo url(); ?>/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo url(); ?>/vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+      <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
 </body>
 </html>

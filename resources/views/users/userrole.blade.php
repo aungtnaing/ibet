@@ -1,4 +1,4 @@
-@extends('dashboard.default')
+@extends('layouts.default')
 @section('content')
 
 
@@ -80,24 +80,23 @@
                   @if($user->roleid==1)
                   <option value="{{ $user->roleid }}">1 : Admin</option>
                   @elseif($user->roleid==2)
-                  <option value="{{ $user->roleid }}">2 : Editor</option>
+                  <option value="{{ $user->roleid }}">2 : Supevisor</option>
                   @elseif($user->roleid==3)
-                   <option value="{{ $user->roleid }}">3 : Designer</option>
+                   <option value="{{ $user->roleid }}">3 : Operator</option>
                   @elseif($user->roleid==4)
-                  <option value="{{ $user->roleid }}">4 : Author</option>
+                  <option value="{{ $user->roleid }}">4 : Operator</option>
                   @elseif($user->roleid==5)
-                  <option value="{{ $user->roleid }}">5 : Circulator</option>
-                  @elseif($user->roleid==6)
-                  <option value="{{ $user->roleid }}">6 : Ad Manager</option>
+                  <option value="{{ $user->roleid }}">5 : Staff</option>
+                 
                   @else
                   <option value="{{ $user->roleid }}">User</option>
                   @endif
                   <option value="1">1 : Admin</option>
-                  <option value="2">2 : Editor (all post)</option>
-                  <option value="3">3 : Designer</option>
-                  <option value="4">4 : Author (own post)</option>
-                  <option value="5">5 : Circulator</option>
-                  <option value="6">6 : Manager</option>
+                  <option value="2">2 : Supevisor</option>
+                  <option value="3">3 : Operator</option>
+                  <option value="4">4 : Operator</option>
+                  <option value="5">5 : Staff</option>
+             
                   <option value="0">0 : User</option>
                </select>
           </div>

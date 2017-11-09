@@ -3,10 +3,7 @@
 
 
 <div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="{{ url('/dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">profile</a> </div>
-    <!-- <h1>USER LISTS</h1> -->
-  </div>
+
   <div class="container-fluid">
     <!--  <h1>Edit Profile</h1> -->
 
@@ -54,93 +51,95 @@
 
              </div>
 
+             <div class="col-lg-6">
 
-             <div class="control-group">
-              <label class="control-label">Name :</label>
-              <div class="controls">
+               <div class="form-group">
+                <label>Name</label>
 
-               <input name="name" class="span11" value="{{ $user->name }}" placeholder="Enter Your Name" type="text" required>
-             </div>
+                <input name="name" class="form-control" value="{{ $user->name }}" placeholder="Enter Your Name" type="text" required>
+              </div>
+
+
+              <div class="form-group">
+                <label>Email</label>
+                
+                 <input class="form-control" name="email" value="{{ $user->email }}" placeholder="Enter Your email" type="text" required>
+              </div>
+
+
+
+             <div class="form-group">
+               <label>Phone1:</label>
+               
+                <input class="form-control" name="ph1" value="{{ $user->ph1 }}" placeholder="Enter Your phone1" type="text">
+
+              
+            </div>
+
+            <div class="form-group">
+              <label>Address:</label>
+             
+
+                <textarea name="address" placeholder="Enter your address" class="form-control" rows="3">{{ $user->address }}</textarea>
+             
+            </div>
+
+            <div class="form-group">
+              <label>Bio:</label>
+             
+
+                <textarea name="bio" placeholder="Enter your bio" class="form-control" rows="6">{{ $user->bio }}</textarea>
+              
+            </div>
+
+            <div class="form-group">
+              <label>Password:</label>
+             
+                <input class="form-control" id="password1" name="password" type="password">
+              
+            </div>
+            <div class="form-group">
+              <label>Confirm password:</label>
+              
+                <input class="form-control" id="password2" name="password_confirmation" type="password">
+             
+            </div>
+
+
+
+            <div class="form-actions">
+             <input class="btn btn-outline btn-primary" type="submit" value="Save Changes"> 
+                <!-- <button type="button" class="btn btn-outline btn-primary">Primary</button> -->
            </div>
-
-
-          
-          <div class="control-group">
-            <label class="control-label">Email:</label>
-            <div class="controls">
-             <input class="span11" name="email" value="{{ $user->email }}" placeholder="Enter Your email" type="text" required>
-
+           <br>
+           <br>
            </div>
-         </div>
-
-         <div class="control-group">
-         <label class="control-label">Phone1:</label>
-          <div class="controls">
-            <input class="span11" name="ph1" value="{{ $user->ph1 }}" placeholder="Enter Your phone1" type="text">
-            
-          </div>
-        </div>
-
-        <div class="control-group">
-          <label class="control-label">Address:</label>
-          <div class="controls">
-
-            <textarea name="address" placeholder="Enter your address" class="span11" rows="3">{{ $user->address }}</textarea>
-          </div>
-        </div>
-
-       <div class="control-group">
-          <label class="control-label">Bio:</label>
-          <div class="controls">
-
-            <textarea name="bio" placeholder="Enter your bio" class="span11" rows="3">{{ $user->bio }}</textarea>
-          </div>
-        </div>
-
-        <div class="control-group">
-          <label class="control-label">Password:</label>
-          <div class="controls">
-            <input class="span11" id="password1" name="password" type="password">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">Confirm password:</label>
-          <div class="controls">
-            <input class="span11" id="password2" name="password_confirmation" type="password">
-          </div>
-        </div>
-
-
-
-        <div class="form-actions">
-         <input class="btn btn-primary" type="submit" value="Save Changes"> 
+         </form>
        </div>
-     </form>
+     </div>
+
+
    </div>
  </div>
-
-
-</div>
-</div>
 </div>
 </div>
 
 
 <script type="text/javascript">
- function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-    reader.onload = function (e) {
-      $('#blah')
-      .attr('src', e.target.result)
-      .width(150)
-      .height(150);
-    };
+      reader.onload = function (e) {
+        $('#blah')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(150);
+      };
 
-    reader.readAsDataURL(input.files[0]);
+      reader.readAsDataURL(input.files[0]);
+    }
   }
-}
 
 </script>
 <script type="text/javascript">

@@ -24,6 +24,14 @@ Route::controllers([
 
 	Route::group(['middleware' => 'auth'],function()
 	{
+
+							
+		Route::group(['middleware' => 'rolewaredashboard'],function()
+		{
+			Route::resource('dashboard','DashboardController');
+
+		});	
+
 		
 		Route::get('dashboarduserprofile', [
 					'uses' => 'ProfilesController@dashboarduserindex'
@@ -34,21 +42,14 @@ Route::controllers([
 		Route::group(['middleware' => 'roleware3_4'],function()
 		{
 			
-			
+			Route::resource('enquirys','EnquiryController');
 
 			Route::group(['middleware' => 'roleware2'],function()
 			{
-				
-
-				
-				
-				
-
+			
 				Route::group(['middleware' => 'roleware'],function()
 				{
-					
-					Route::resource('userspannel','UserspannelController');
-					
+					Route::resource('userspannel','UserspannelController');			
 				});
 
 			});
