@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\User;
-use App\Category;
+
+use App\Betitems;
 use DB;
 use Hash;
 use Auth;
@@ -39,9 +40,15 @@ class ProfilesController extends Controller {
 		// echo "hello dsh";
 		// die();
 
+		 $lastid = DB::table('matchdates')->select('id')->orderBy('id', 'DESC')->first();
+
+		
+		$totalbet = Betitems::where('dateid',$lastid->id)->where('active',1)->sum('amount');
+
+
 		$user = User::find($request->user()->id);
 
-		return view('users.userprofileupdate')->with('user',$user);
+		return view('users.userprofileupdate')->with('user',$user)->with("currentbet", $totalbet);
 	}
 
 	/**
@@ -232,7 +239,7 @@ public function store(Request $request)
 		$user->password = Hash::make($request->input("password"));
 	}
 	$user->photourl = $photourl;
-	$user->bio =  $request->input("bio");
+	// $user->about =  $request->input("about");
 	$user->save();
 
 	return redirect()->action('HomeController@index');

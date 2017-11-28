@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.defaultfull')
 @section('content')
 
 
@@ -84,14 +84,7 @@
              
             </div>
 
-            <div class="form-group">
-              <label>Bio:</label>
-             
-
-                <textarea name="bio" placeholder="Enter your bio" class="form-control" rows="6">{{ $user->bio }}</textarea>
-              
-            </div>
-
+           
             <div class="form-group">
               <label>Password:</label>
              

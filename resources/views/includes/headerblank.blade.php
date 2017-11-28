@@ -6,17 +6,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><h4 style="color:#3fe265;">STIMU Management System</h4></a>
+                <a class="navbar-brand" href="/"><h4 style="color:#3fe265;">SHWE BET</h4></a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 
-                <!-- /.dropdown -->
-                <li><a href="/dashboard">dashbord</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i><span>{{ Auth::user()->name }}</span> <i class="fa fa-caret-down"></i>
+               <li><a class="nav-link" href="{{ url('betitems') }}">last betting</a></li>
+               
+               <li class="dropdown">
+                    <a class="nav-link" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i><span style="">{{ Auth::user()->name }}</span> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="{{ url('dashboarduserprofile') }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -28,7 +28,7 @@
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
+                 <li style="color: black;background-color: white;">Bet {{ $currentbet }} ks <br> Win +{{ $totalwin }} ks <br> Acc -{{ $totalacc }} ks <br> Lose-{{ $totallose }} ks <br> Total {{ $totalamount }} <br> Bal {{ Auth::user()->balance }} ks</li>
             </ul>
             <!-- /.navbar-top-links -->
 

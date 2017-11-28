@@ -1,18 +1,13 @@
-@extends('layouts.default')
+@extends('layouts.defaulthome')
 @section('content')
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-           
-               
-            </div>
-            
+  <!-- Page Content -->
+    <section class="py-5">
+      <div class="container">
+        <h1>SHWE BET မွ ႀကိဳဆိုပါ၏</h1>
+        <p>welcome to my world.</p>
+      </div>
+    </section>
         
 
 @stop

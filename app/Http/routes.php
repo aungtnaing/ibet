@@ -16,47 +16,61 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+'auth' => 'Auth\AuthController',
+'password' => 'Auth\PasswordController',
 ]);
 
 
 
-	Route::group(['middleware' => 'auth'],function()
+Route::group(['middleware' => 'auth'],function()
+{
+
+
+	Route::get('betitemcreate/{betid}', [
+		'uses' => 'BetitemsController@betitemcreate'
+		]);
+
+	Route::resource('betitems','BetitemsController');
+					
+	Route::group(['middleware' => 'rolewaredashboard'],function()
 	{
+		Route::resource('dashboard','DashboardController');
 
-							
-		Route::group(['middleware' => 'rolewaredashboard'],function()
-		{
-			Route::resource('dashboard','DashboardController');
+	});	
 
-		});	
+	
+	Route::get('dashboarduserprofile', [
+				'uses' => 'ProfilesController@dashboarduserindex'
+				]);
 
+	Route::resource('profiles','ProfilesController');
+
+	Route::group(['middleware' => 'roleware3_4'],function()
+	{
 		
-		Route::get('dashboarduserprofile', [
-					'uses' => 'ProfilesController@dashboarduserindex'
-					]);
+		// Route::resource('enquirys','EnquiryController');
 
-		Route::resource('profiles','ProfilesController');
-
-		Route::group(['middleware' => 'roleware3_4'],function()
+		Route::group(['middleware' => 'roleware2'],function()
 		{
-			
-			Route::resource('enquirys','EnquiryController');
-
-			Route::group(['middleware' => 'roleware2'],function()
+		
+			Route::group(['middleware' => 'roleware'],function()
 			{
-			
-				Route::group(['middleware' => 'roleware'],function()
-				{
-					Route::resource('userspannel','UserspannelController');			
-				});
+				Route::resource('userspannel','UserspannelController');		
+				Route::resource('mainslides','MainslideController');
+				Route::resource('teams','TeamController');
+
+				Route::resource('bets','BetController');
+				Route::resource('betmanagers','BetmanagerController');
+
+
 
 			});
-			
+
 		});
-
-
-
 		
 	});
+
+
+
+	
+});

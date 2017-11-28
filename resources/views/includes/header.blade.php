@@ -6,13 +6,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><h4 style="color:#3fe265;">STIMU Management System</h4></a>
+                <a class="navbar-brand" href="/"><h4 style="color:#3fe265;">SHWE BET</h4></a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 
                 <!-- /.dropdown -->
+                 
                 <li><a href="/dashboard">dashbord</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,6 +29,7 @@
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
+               
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -53,7 +55,17 @@
                             <a href="/userspannel">user manager</a>
                         </li>
                         <li>
-                            <a href="/enquirys">enquiry information</a>
+                            <a href="/mainslides">mainslide manager</a>
+                        </li>
+                        <li>
+                            <a href="/teams">teams manager</a>
+                        </li>
+
+                         <li>
+                            <a href="/bets">bets manager</a>
+                        </li>
+                         <li>
+                            <a href="/betmanagers">betitems manager</a>
                         </li>
                     </ul>
                 </div>

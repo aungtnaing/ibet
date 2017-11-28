@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+
+use App\Bets;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +33,19 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('pages.welcome');
+
+
+		$bets = Bets::where('active',1)
+						->get();
+
+		if(count($bets) > 0)
+		{
+			return view('pages.welcome')->with('bets', $bets);
+		}
+		else
+		{
+			return view('pages.welcomenews');		
+		}
 	}
 
 }

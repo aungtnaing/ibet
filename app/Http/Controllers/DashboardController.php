@@ -29,7 +29,7 @@ class DashboardController extends Controller {
 		// $visitors = Visitors::where('active', 0)
 		// 					->orderBy('id','DESC')
 		// 					->get();
-
+		
 		return view('pages.dashboard')
 				->with('user',$user);
 				// ->with('visitors', $visitors);	
