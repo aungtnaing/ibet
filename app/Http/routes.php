@@ -20,7 +20,8 @@ Route::controllers([
 'password' => 'Auth\PasswordController',
 ]);
 
-
+Route::get('facebooklogin','FacebookController@redirectToProvider');
+Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
 Route::group(['middleware' => 'auth'],function()
 {

@@ -94,6 +94,7 @@ return [
 	| Available Settings: "single", "daily", "syslog", "errorlog"
 	|
 	*/
+	'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
 	'log' => 'daily',
 

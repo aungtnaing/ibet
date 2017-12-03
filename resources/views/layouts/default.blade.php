@@ -14,7 +14,7 @@
 
 	</div>
 
-     
+
 
 	<script src="<?php echo url(); ?>/vendor/jquery/jquery.min.js"></script>
 

@@ -18,7 +18,7 @@
       </div>
       <!-- /.container -->
     </footer>
-     
+
   <script src="<?php echo url(); ?>/fulls/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo url(); ?>/fulls/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
