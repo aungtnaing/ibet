@@ -1,71 +1,58 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-use DB;
-use App\User;
+namespace App\Http\Controllers;
+
 use Socialite;
+use App\User;
+use Auth;
+use DB;
 
-class FacebookController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		
-	}
-
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		
-
-
-
-
-
-	}
-
-	public function redirectToProvider()
-	{
-		return Socialite::driver('facebook')->with(['hd' => 'facebook.com'])->redirect();
-	}
-
-	public function handleProviderCallback()
+class FacebookController extends Controller
 {
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        //return Socialite::driver('facebook')->redirect();
+
+        // echo "string";
+        // die();
+        
+        return Socialite::driver('facebook')->with(['hd' => 'facebook.com'])->redirect();
+
+            
+
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+      
         $fbuser = Socialite::with('facebook')->stateless()->user();//Getting User Information from Facebook;
         try {
 
-            if(User::where('fbuserid', '=', $fbuser->id)->orWhere('email','=',$fbuser->email)->first())
-            {
-                $checkUser = User::where('fbuserid', '=', $fbuser->id)->orWhere('email','=',$fbuser->email)->first();
-                Auth::login($checkUser);
-                return redirect('home');
-            }
+        	if(User::where('fbuserid', '=', $fbuser->id)->orWhere('email','=',$fbuser->email)->first())
+        	{
+        		$checkUser = User::where('fbuserid', '=', $fbuser->id)->orWhere('email','=',$fbuser->email)->first();
+        		Auth::login($checkUser);
+        		return redirect('home');
+        	}
 
-            $user = new User();
-            
+        	$user = new User();
 
-            $user->name = $fbuser->getName();
-            $user->email = $fbuser->getEmail();
 
-       
+        	$user->name = $fbuser->getName();
+        	$user->email = $fbuser->getEmail();
+
+
 
             $user->fbuserid = $fbuser->getId();//facebook Id
 
@@ -75,10 +62,9 @@ class FacebookController extends Controller {
 
         } catch (Exception $e) {
 
-            return "Please check Something.";
+        	return "Please check Something.";
 
         }
     }
-
-
 }
+

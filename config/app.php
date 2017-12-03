@@ -94,7 +94,6 @@ return [
 	| Available Settings: "single", "daily", "syslog", "errorlog"
 	|
 	*/
-	'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
 	'log' => 'daily',
 
@@ -193,6 +192,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+		'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+
 
 	],
 
