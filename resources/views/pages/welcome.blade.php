@@ -48,6 +48,7 @@
     </nav>
 
     
+
     <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <!-- <ol class="carousel-indicators">
@@ -128,6 +129,10 @@
         <h1>SHWE BET မွ ႀကိဳဆိုပါ၏</h1>
         <p>welcome to my world.</p>
       </div>
+      <fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
     </section>
 
     <!-- Footer -->
@@ -137,6 +142,37 @@
       </div>
       <!-- /.container -->
     </footer>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{1395950293865855}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{v2.11}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+</script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="<?php echo url(); ?>/fulls/vendor/jquery/jquery.min.js"></script>

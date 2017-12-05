@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use Laravel\Socialite\Contracts\Factory as Socialite;
 use Socialite;
 use App\User;
 use Auth;
@@ -17,12 +17,13 @@ class FacebookController extends Controller
      */
     public function redirectToProvider()
     {
-        //return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->redirect();
 
         // echo "string";
         // die();
-        
-        return Socialite::driver('facebook')->with(['hd' => 'facebook.com'])->redirect();
+
+
+        // return Socialite::driver('facebook')->with(['hd' => 'facebook.com'])->redirect();
 
             
 
